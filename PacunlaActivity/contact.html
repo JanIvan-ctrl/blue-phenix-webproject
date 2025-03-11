@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+    <link rel="stylesheet" href="stylesheet/external.css">
+    <style>
+        body {
+            background-color: lightskyblue;
+        }
+        .batch1 {
+            color: white;
+            font-weight: bolder;
+        }
+        #pc11 {
+                text-transform: uppercase;
+                color: aqua ;
+                font-weight: bolder;
+        }
+        label, input ,textarea{
+            display:block;
+        }
+        input[type="checkbox"],input[type="radio"] {
+            display:inline;
+        }
+        .hahah{
+            background-color: red;
+        }
+        input[type="email"],input[type="text"],input[type="Password"]{
+            height: 30px;
+            width: 500px;
+            color: red;
+            border-radius: 20px;
+        }
+        textarea{
+            text-transform: uppercase;
+            font-size: large;
+        }
+       
+    
+    </style>
+</head>
+<body style="background-color: lightsalmon;">
+    <p> GO TO <a href="index.html">index</a></p>
+
+    <p id="pc11">This is the 1st paragraph</p>
+    <p class="batch1">This is the 2nd paragraph</p>
+    <p class="batch1">This is the 3rd paragraph</p>
+
+    <form>
+        <label for="">First Name</label>
+        <input type="text">
+        <label for="">Password</label>
+        <input type="password">
+        <label for="">Email</label>
+        <input type="email">
+            <label for="">Checkbox</label>
+            <input type="checkbox"> Married
+            <input type="checkbox"> Single
+            <input type="checkbox"> Divorce
+            <input type="checkbox"> Baug
+
+        <label for="">Radio button</label>
+        <input type="radio"name="gender">Male
+        <input type="radio"name="gender">Female
+        <input type="radio"name="gender">LGBTQ
+        <textarea rows="10" cols="50"></textarea>
+        <input type="submit" value="Save" class="hahah">
+
+  
+         <!--text,password,email,date,datetime,color,time,radio,-->
+    </form>
+
+</body>
+</html>

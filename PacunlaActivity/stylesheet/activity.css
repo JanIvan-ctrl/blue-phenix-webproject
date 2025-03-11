@@ -1,0 +1,13 @@
+header{
+    background-color: darkgreen;
+    height:150px;}
+body{
+    background-color: grey;
+}
+header{
+    background-color:green;
+    height: 75  px;
+}
+footer{
+    background-color:black;
+    height: 75px;}
