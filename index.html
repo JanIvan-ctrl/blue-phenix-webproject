@@ -4,15 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .parentbox{
+            display:flex;
+            border:1px solid red;
+            flex-flow:row wrap;
+            justify-content:space-evenly;
+            height:600px;
+            align-items:center;
+        }
+        .parentbox>.items{
+          width:200px;
+            background-color:red;
+        }
+    </style>
 </head>
 <body>
-    <h1>this will be uploaded in github</h1>
-    <h2>this will be uploaded in github</h2>
-    <h3>this will be uploaded in github</h3>
-    <h4>this will be uploaded in github</h4>
-    <h5>this will be uploaded in github</h5>
-    <h6>this will be uploaded in github</h6>
-        <p>This will be fetched in my desktop</p>
-            <p>this is the second</p>
-</body>
+   <div class="parentbox">
+        <div class="items">1</div>
+        <div class="items">2</div>
+        <div class="items">3</div>
+        <div class="items">4</div>
+        <div class="items">5</div>
+   </div>
 </html>
