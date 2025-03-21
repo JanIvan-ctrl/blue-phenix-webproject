@@ -6,11 +6,41 @@
     <title>Activity 2</title>
     <style>
      .navigation{
-        background-color: #043873;
+        background-color:#043873;
         height: 90px;
         color:white;
         display:flex;
+        position: fixed;
+        width: 100%;
+        opacity: 0.85;
+
      }
+     .nav{
+        align-items: center;
+        display: inline-flex;
+        margin-left: 5rem;
+        font-size: 1.3rem;
+        list-style: none;
+       
+     }
+     .nav a{
+        color: white;
+        font-weight: 500;
+        transition: color 0.3s ease-in-out;
+     }
+     .nav li{
+        margin-bottom: 5rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+     }
+     .nav> .nav1{
+        padding: 18px;
+     }
+     .section01{
+        background-color:white;
+        height:10px;
+     }
+     
     .section1{
         background-color:#043873;
         height:600px;
@@ -24,22 +54,20 @@
         font-size:20px;
         
     }
-    .section2{
-        height:1500px;
-        background-color: white;
+    .section2row{
+        background-color:white;
         display: flex;
-        flex-flow: column wrap;
     }
-    .section2>.items{
-        flex: 1;    
+    .section2row>.items{
+        flex: 1;
         padding: 150px;
-        color:black;
-        font-size:20px;
     }
     .section3{
         height:800px;
         background-color:#043873;
         display: flex;
+        align-items: center;
+        text-align: center;
     }
     .section3>.items{
         flex: 1;    
@@ -65,28 +93,28 @@
         color: white;
         text-align: center;
         align-content: center;
+        font-size: larger;
     }
     
     .section6{
-        height:1000px;
-        background-color: white;
-        display: flex;
-    }
-    .section6>.items{
-        flex: 1;    
-        padding: 150px;
-        color:black;
-        font-size:20px;
+       background-color: white;
+       height: 800px;
+       display:flex;
+       align-content: center;
+       flex-flow: row wrap;
+       justify-content:center;
+       gap: 200px;
+       font-size: large;
     }
     .section7{
         height:800px;
         background-color: #043873;
         display: flex;
-        
+        align-items: center;
     }
     .section7>.items{
         flex: 1;    
-        padding: 60px;
+        padding: 150px;
         color:white;
         font-size:20px;
         
@@ -102,23 +130,76 @@
         font-family:tahoma;
         text-align: center;
         align-content: center;
-       
     }
-
+   .cars{
+    height: 400px;
+    gap: 180px;
+    align-content: center;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+   }
+   .button:hover{
+    color:red;
+   }
+   .button{
+    background-color:green;
+    color:white;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: large;
+    border-radius: 5px;
+   }
+   .frame{
+    width: 700px;
+    height: 400px;
+    background-color: white;
+    align-content: center;
+   }
+   .img{
+    width: 600px;
+    height: 380px;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 80px;
+    display: flex;
+   }
+   .haha{
+    align-items: center;
+    text-align: center;
+   }
+   .h1{
+    color:goldenrod;
+   }
+   body{
+    margin: 0px;
+    
+   }
     </style>
 </head>
 <body>
     <div class="navigation">
-        <h1>whitespace</h1>
+        <img src="assets/1.webp">
+        <ul><nav class="nav">
+            <li class="nav1"><a href="https://www.kawasaki.com/en-us/"><h2>Home</h2></a></li>
+            <li class="nav1"><a href="https://www.kawasaki.com/en-us/shop/accessories-merchandise"><h2>Shop</h2></a></li>
+            <li class="nav1"><a href="https://www.kawasaki.com/en-us/about/history"><h2>About us</h2></a></li>
+            <li class="nav1"><a href="https://www.kawasaki.com/en-us/my-kawasaki/loginregister?returnurl=%2fen-us%2fmy-kawasaki"><h2>Account</h2></a></li>
+        </nav>
+        </ul>
     </div>
-
+    <div class="section01"></div>
+   
     <div class="section1">
         <div class="items">
-            <h1>Get More Done with <br>whitespace</h1>
-            <p>Project management software that enables your teams to collaborate,plan,<br>analyze and manage everday tasks</p>
+            <h1>Kawasaki<br>Motors</h1>
+            <p>Kawasaki Motors, a subsidiary of Kawasaki Heavy Industries, is a Japanese mobility manufacturer known for producing motorcycles, all-terrain vehicles (ATVs), utility vehicles,<br>
+                 watercraft (including the iconic "Jet Ski"), and general-purpose gasoline engines.Kawasaki's roots trace back to 1878 when Shozo Kawasaki established the Kawasaki Tsukiji Shipyard in Tokyo.  </p>
+            <button class="button"><a href="https://www.kawasaki.com/en-us/">Click here</a></button>
         </div>
         <div class="items">
-            <img src="https://placehold.co/309" alt="">
+            <img src="assets/Copy-of-Copy-of-Copy-of-91WHEELS-News-21.avif" alt="" height="400" width="600">
         </div>
     </div>
     
@@ -126,66 +207,85 @@
         
         <div class="section2row">
             <div class="items">
-                <h1>Project<br>Management</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam, aspernatur. Nemo quidem unde corrupti odit non quis, iusto voluptates repellat accusantium voluptatum sed ipsam aperiam alias enim numquam rem eum!</p>
+                <h1>Top Sales</h1>
+                <p>The Kawasaki Ninja ZX-10R is a motorcycle in the Ninja sport bike series from the Japanese manufacturer Kawasaki, the successor to the Ninja ZX-9R. It was originally released in 2004 and has been updated and revised throughout the years. It combines an ultra-narrow chassis, low weight, and radial brakes.</p>
+                <button class="button"><a href="https://kawasakileisurebikes.ph/motorcycles/sports/ninja-500-se/">Click here</a></button>
             </div>
             <div class="items">
-                <img src="https://placehold.co/309" alt="">
+                <img src="assets/SE2.png" alt="" height="500" width="600">
             </div>
         </div>
         <div class="section2row">
             <div class="items">
-                <h1>Project<br>Management</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam, aspernatur. Nemo quidem unde corrupti odit non quis, iusto voluptates repellat accusantium voluptatum sed ipsam aperiam alias enim numquam rem eum!</p>
+                
+                <img src="assets/24291981-0-141511081.jpg" alt="">
             </div>
             <div class="items">
-                <img src="https://placehold.co/309" alt="">
+                <h1>Newly Release</h1>
+                <p>Meet the NAV®: our first-ever Personal Transportation Vehicle (PTV) designed for cruising the good life. With premium, sporty design and comfort for the whole family, the NAV isn't just another ride. It's a game changer for the PTV market. Thoughtfully equipped with a category-first fold-flat seat, expandable front and rear storage, cupholders, USB ports, and all-LED lighting, the NAV is as functional as it is fun. So, you can cruise from the pool to the BBQ to the pickleball courts—and beyond.</p>
+                <button class="button"><a href="https://www.mykissimmeemotorsports.com/inventory/v1/Current/Kawasaki/Personal-Transportation-Vehicle/NAV-4e/Limited---24291981?format=print">Click here</a></button>
             </div>
         </div>
     </div>
 
     <div class="section3">
         <div class="items">
-            <h1>Use as Extension</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos minus doloribus maiores, <br>porro, ab accusamus molestias optio nostrum ex reprehenderit excepturi, exercitationem illo quidem. Veniam officia ab accusamus vero quod.</p>
+            <h1>KLX 150</h1>
+            <p>The Kawasaki KLX150 is a versatile, lightweight, and reliable dual-sport motorcycle, suitable for both urban commuting and off-road trail riding, featuring a 144cc air-cooled engine and a slim, lightweight chassis. </p>
         </div>
         <div class="items">
-            <img src="https://placehold.co/309" alt="">
+            <img src="assets/Klx150-banner.jpg" alt="" height="500" width="800">
         </div>
     </div>
 
     <div class="section4">
         <div class="items">
-            <img src="https://placehold.co/309" alt="">
+            <img src="assets/parts 1.png" alt="" height="309" width="350">
+            <img src="assets/parts 2.png" alt="" height="309" width="350">
+            <img src="assets/parts 3.png" alt="" height="309" width="350">
+            <img src="assets/parts 4.png" alt="" height="309" width="350">
+            
+
         </div>
         <div class="items">
-            <h1>Costomise it to<br>Your Needs</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste temporibus numquam adipisci, id incidunt <br>accusantium corporis inventore quas excepturi tempore ex eum odio culpa ut pariatur quibusdam quae molestiae ipsum.</p>
+            <h1>Parts And Accesories</h1>
+            <p> Essential components necessary for a vehicle's operation, while "accessories" are optional items that enhance functionality or aesthetics, but aren't crucial for the vehicle to run.<br>
+                replacement parts and accessories for Vehicles. Parts and Accessories means the Service Parts and the Supplies and Accessories, collectively. “Service Parts” means the replacement parts and components used to service, maintain and repair the OEM Products. </p>
         </div>
     </div>
     
     <div class="section5">
-        <h1>Your Work,Everywhere you are</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque vero magni doloremque sapiente possimus quaerat alias voluptate quibusdam expedita, deleniti ullam m<br>inus eligendi reiciendis in perferendis earum excepturi? Eveniet, odit.</p>
+        <h1 class="h1">Monster EnergyPro Circuit<br>Kawasaki</h1>
+        <p>The 2025 racing season marks the 32nd year of a winning partnership between Kawasaki and Pro Circuit. This successful combination boasts an impressive resume of accolades including the most combined supercross/motocross wins in the 125/250 class and an industry-leading 31 championships. Returning to the Monster Energy® Pro Circuit Kawasaki race team for 2025 aboard their KX250 motorcycles are proven race winners Levi Kitchen, Cameron McAdoo, and Seth Hammaker. These elite racers will be accompanied by new teammates and familiar faces, Garrett Marchbanks, Ty Masterpool and recent Monster Energ Team Green graduate Drew Adams.  </p>
     </div>
 
-    <div class="section6">
-        <div class="items">
-            <h1>100% of Your Data</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum. Laudantium quisquam neque iure quas maiores, quo sapiente repr<br>ehenderit ut natus atque eaque perspiciatis iusto ipsa itaque nemo, alias veniam!</p>
-        </div>
-        <div class="items">
-            <img src="https://placehold.co/309" alt="">
-        </div>
+    <section class="section6">
+        <div><h1>Ride Your Friends</h1>
+        <p>Renowned for superlative versatility and lively performance, Versys® motorcycles are the ideal urban adventure partners as well as capable backroad companions.</p>
+        <button class="button"><a href ="https://www.kawasaki.com/en-us/racing/kawasaki-racing-teams/sxmx/pro-circuit-kawasaki">Click here</a></button> </div>
+        
+        <img src="assets/adventure 1.jpg" alt="" class="frame" >
+
+    </section>
+    <h1 class="haha">Adventure Bikes</h1>
+    <div class="cars">
+        <img src="assets/adventure 2.jpg" class="img">
+        <img src="assets/adventure 3.jpg" class="img">
+        <img src="assets/adventure 4.jpg" class="img">
+        
     </div>
+
 
     <div class="section7">
         <div class="items">
-            <img src="https://placehold.co/309" alt="">
+            <img src="assets/contact-us.jpeg" alt="" height="500" width="1000">
         </div>
         <div class="items">
-            <h1>Work with Your<br>Favorite Apps Using<br>whitespace</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum fuga repellendus odit saepe iste delectus assumenda incidunt, <br> voluptatibus vero porro enim reprehenderit quo quia repellat voluptas doloribus dolore, accusantium placeat.</p>
+            <h1>Contact Us:</h1>
+            <h4>KAWASAKI@gmail.com</h4>
+            <h4>0937513590106</h4>
+            <h4>KAWASAKI.yahoo.com</h4>
+            <button class="button"><a href="https://www.kawasaki-lifestyle.com/en/service/contact-us.html">Click here</a></button>
         </div>
     </div>
     
