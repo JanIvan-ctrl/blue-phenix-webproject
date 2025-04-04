@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Layout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ddd0cd;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #c5b5b1;
+}
+
+.logo {
+    font-weight: bold;
+}
+
+.menu a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px;
+    background-color: #c5b5b1;
+}
+
+.cta {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.content-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: #ddd0cd;
+}
+
+.text-box, .image-box {
+    width: 45%;
+    background-color: #c5b5b1;
+    padding: 20px;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.testimonials {
+    text-align: center;
+    padding: 50px;
+    background-color: #c5b5b1;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.testimonial {
+    width: 30%;
+    background-color: #ddd0cd;
+    padding: 20px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.footer-cta {
+    text-align: center;
+    padding: 50px;
+    background-color: #c5b5b1;
+}
+
+</style>
+
+<body>
+    <header class="navbar">
+        <div class="logo">LOGO</div>
+        <nav class="menu">
+            <a href="#">MENU ITEM 4</a>
+            <a href="#">MENU ITEM 4</a>
+            <a href="#">MENU ITEM 4</a>
+            <a href="#">MENU ITEM 4</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>HEADING ONE</h1>
+        <button class="cta">CTA</button>
+    </section>
+
+    <section class="content-section">
+        <div class="text-box">
+            <h2>HEADING TWO</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+        </div>
+        <div class="image-box">VECTOR/ASSET</div>
+    </section>
+
+    <section class="content-section reverse">
+        <div class="image-box">VECTOR/ASSET</div>
+        <div class="text-box">
+            <h2>HEADING TWO</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="text-box">
+            <h2>HEADING TWO</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+        </div>
+        <div class="image-box">VECTOR/ASSET</div>
+    </section>
+
+    <section class="testimonials">
+        <h2>TESTIMONIALS</h2>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <div class="avatar"></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                <p class="name">TESTIMONIAL NAME</p>
+            </div>
+            <div class="testimonial">
+                <div class="avatar"></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                <p class="name">TESTIMONIAL NAME</p>
+            </div>
+            <div class="testimonial">
+                <div class="avatar"></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                <p class="name">TESTIMONIAL NAME</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer-cta">
+        <h2>SUBHEADING</h2>
+        <button class="cta">CTA</button>
+    </section>
+</body>
+</html>
