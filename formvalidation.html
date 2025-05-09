@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="formvalidation.css">
+</head>
+<body>
+    <form action="" onsubmit="return validate()">
+        <!---required , readonly, disabled-->
+        <label for="fname">Enter Your Name</label>
+        <input type="text" id="fname" minlength="5" maxlength="8" >
+        <span id="fname-error"></span>
+
+        <label for="email">email</label>
+        <input type="email" id="email" >
+        <span id="email-error"></span>
+
+        <label for="password">password</label>
+        <input type="password" id="password" pattern="[a-z0-9]{5,}" >
+        <span id="password-error"></span>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validate(){
+            let isValid = true;
+            let name = document.getElementById("fname").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            if(name == ""){
+                document.getElementById("fname-error").innerHTML = "Name Is Required";
+                isValid = false;
+            }
+            else if(name.length < 8){
+                document.getElementById("fname-error").innerHTML = "Name must be 8 characters long";
+                isValid = false;
+            }
+            else{
+                document.getElementById("fname-error").innerHTML = "";
+            }
+        
+            if(email == ""){
+                document.getElementById("email-error").innerHTML = "email Is Required";   
+            }
+           
+            if(password == ""){
+                document.getElementById("passwword-error").innerHTML = "password Is Required";
+                isValid = false;
+            }
+            else if(password.length < 5){
+                document.getElementById("password-error").innerHTML = "password must be 5 characters long";
+                isValid = false;
+            }
+            else{
+                document.getElementById("password-error").innerHTML = "";
+            }
+
+            
+            return isValid; 
+        }
+    </script>
+</body>
+</html>

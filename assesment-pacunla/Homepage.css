@@ -1,0 +1,105 @@
+
+.head , .footer{
+    height: 70px;
+    border: 1px solid black;
+    background-color: orangered;
+    justify-content: center;
+    display: flex;
+    border: 3px solid black;
+    
+}
+.header h1{
+    color: white;
+    font-size: 150%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: lightgreen;
+}
+
+.meal-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    
+}
+
+.meal {
+    background: lightgray;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 3px solid black;
+}
+
+.meal img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.meal h3 {
+    margin: 10px 0 5px;
+}
+
+.meal p {
+    font-size: 14px;
+    color: #666;
+}
+
+#btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    
+}
+#order-form{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    color: whitesmoke;
+}
+form {
+    background-color: rgb(46, 83, 46);
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form h2 {
+    text-align: center;
+}
+
+form input {
+    width: 90%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.meal-image {
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    color: #fff;
+    font-size: 100%;
+    
+}
+.footer{
+    margin-top: 50px;
+    
+}
