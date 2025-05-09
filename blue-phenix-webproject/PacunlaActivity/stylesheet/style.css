@@ -1,0 +1,26 @@
+#AboutTitle{
+    color:aqua
+}
+
+h2 {
+    color:blue;
+}
+h1{
+    color:rgb(255, 7, 7)
+}
+header{
+    background-color: darkgreen;
+    height:150px;
+}
+nav{
+    background-color: lightgreen;
+    height: 100% ;
+}
+section{
+    background-color: lightgoldenrodyellow;
+    height: 100%;
+}
+footer{
+    background-color: darkgreen;
+    height: 150px;
+}  

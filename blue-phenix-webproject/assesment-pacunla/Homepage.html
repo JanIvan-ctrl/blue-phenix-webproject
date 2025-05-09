@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Harvest Kiosk</title>
+    <link rel="stylesheet" href="Homepage.css">
+    <style>
+        .button1 {
+            height: 50px;
+            width: 200px;
+            margin-left: 500px;
+            text-align: center;
+            margin-top: 10px;
+            border-radius: 20px;
+            text-align: center;
+            justify-content: center;
+            align-content: center;
+            display: none;
+        }
+        #bote {
+            height: 60px;
+            width: 100px;
+            font-size: 25px;
+            background-color: rgb(169, 231, 169);
+            box-shadow: 3px 3px 5px black;
+            color: darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="head">
+        <h1>Fresh Harvest Kiosk</h1>
+    </div>
+
+    <div class="meal-container" id="meal-list"></div>
+
+    <form id="order-form">
+        <h2>Order Form</h2>
+        <img id="form-image" class="meal-image" src="" alt="" />
+        <input type="text" id="meal-name" placeholder="Meal Name" readonly required />
+        <input type="number" id="quantity" placeholder="Quantity" required />
+        <input type="number" id="price" placeholder="Price" readonly />
+        <input type="text" id="buyer-name" placeholder="Name of Buyer" pattern="[A-Za-z\s]+" title="Only letters and spaces are allowed" required />
+        <input type="number" id="mobile-number" placeholder="Mobile Number" required />
+        <button type="submit" id="btn">Submit Order</button>
+    </form>
+
+    <div class="button1">
+        <button><a href="register.html">Register page</a></button>
+    </div>
+
+    <div class="footer">
+        <p>Fresh Harvest Inc. Established in 2012</p>
+    </div>
+
+    <script>
+        fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=c')
+            .then(res => res.json())
+            .then(data => {
+                const mealList = document.getElementById('meal-list');
+                mealList.innerHTML = '';
+                data.meals.forEach(meal => {
+                    const div = document.createElement('div');
+                    div.className = 'meal';
+                    div.innerHTML = `
+                        <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
+                        <h3>${meal.strMeal}</h3>
+                        <p>Category: ${meal.strCategory}</p>
+                        <button id="bote" onclick="selectMeal('${meal.strMeal}', '${meal.strMealThumb}', ${Math.floor(Math.random() * 100) + 50})">Order Now</button>
+                    `;
+                    mealList.appendChild(div);
+                });
+            })
+            .catch(error => console.error('Failed to fetch meals:', error));
+
+        function selectMeal(name, image, price) {
+            document.getElementById('meal-name').value = name;
+            document.getElementById('form-image').src = image;
+            document.getElementById('form-image').alt = name;
+            document.getElementById('price').value = price;
+        }
+
+        document.getElementById('order-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const buyerName = document.getElementById('buyer-name').value.trim();
+            const namePattern = /^[A-Za-z\s]+$/;
+
+            if (!namePattern.test(buyerName)) {
+                alert('Name of Buyer must only contain letters and spaces.');
+                return;
+            }
+
+            const mobileNumber = document.getElementById('mobile-number').value.trim();
+
+            if (!/^\d{11}$/.test(mobileNumber)) {
+                alert('Mobile number must be exactly 11 digits.');
+                return;
+            }
+
+            const orderData = {
+                mealName: document.getElementById('meal-name').value,
+                quantity: document.getElementById('quantity').value,
+                price: document.getElementById('price').value,
+                buyerName: buyerName,
+                mobileNumber: mobileNumber
+            };
+
+            fetch('https://jsonplaceholder.typicode.com/posts', {
+                method: 'POST',
+                body: JSON.stringify(orderData),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            })
+                .then(response => response.json())
+                .then(data => {
+                    alert('Order submitted successfully!');
+                    console.log('Response:', data);
+                    document.getElementById('order-form').reset();
+                    document.getElementById('form-image').src = '';
+                })
+                .catch(error => {
+                    alert('Error submitting order.');
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+
+</body>
+</html>

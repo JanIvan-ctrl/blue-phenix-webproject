@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Validation</title>
+    <style>
+        body {
+            margin: 0px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #container {
+            background-color: lightslategray;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column nowrap;
+        }
+        #form {
+            width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            background: linear-gradient(to right, darkgreen, rgb(133, 238, 133));
+            height: calc(100vh - 100px); 
+        }
+        input {
+            margin-top: 10px;
+            display: block;
+            color: darkred;
+            font-size: 18px;
+            font-weight: bold;
+            width: 100%;
+            padding: 8px;
+            border-radius: 7px;
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+            color: black;
+            font-size: 40px;
+        }
+        #rad {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        span {
+            color: red;
+            font-size: 14px;
+            display: block;
+            text-align: center;
+            margin-top: 5px;
+        }
+        #button {
+            margin-top: 20px;
+            background-color: red;
+            height: 40px;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 20px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <form id="form" onsubmit="return validate()">
+            <h1>Registration Form</h1>
+
+            <input type="text" id="firstname" placeholder="First Name">
+            <span id="firstname-error"></span>
+
+            <input type="text" id="lastname" placeholder="Last Name">
+            <span id="lastname-error"></span>
+
+            <div id="rad">
+                <label><input type="radio" name="gender" value="Male"> Male</label>
+                <label><input type="radio" name="gender" value="Female"> Female</label>
+                <label><input type="radio" name="gender" value="LGBT"> LGBT</label>
+            </div>
+            <span id="gender-error"></span>
+
+            <input type="date" id="date">
+            <span id="date-error"></span>
+
+            <input type="text" id="contact" placeholder="63XXXXXXXXXX" pattern="63\d{9}" maxlength="11">
+            <span id="contact-error"></span>
+
+            <input type="text" id="email" placeholder="Email">
+            <span id="email-error"></span>
+
+            <input type="text" id="username" placeholder="Username">
+            <span id="username-error"></span>
+
+            <input type="password" id="password" placeholder="Password">
+            <span id="password-error"></span>
+
+            <input type="password" id="confirmpassword" placeholder="Confirm Password">
+            <span id="confirmpassword-error"></span>
+
+            <input type="submit" value="Submit" id="button">
+        </form>
+    </div>
+
+    <script>
+        function validate() {
+            let isValid = true;
+
+            let firstname = document.getElementById("firstname").value.trim();
+            let lastname = document.getElementById("lastname").value.trim();
+            let gender = document.querySelector('input[name="gender"]:checked');
+            let birthdate = document.getElementById("date").value;
+            let contact = document.getElementById("contact").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let username = document.getElementById("username").value.trim();
+            let password = document.getElementById("password").value;
+            let confirmpassword = document.getElementById("confirmpassword").value;
+
+            document.querySelectorAll("span").forEach(span => span.innerHTML = "");
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const contactRegex = /^63\d{9}$/; 
+
+            if (firstname === "") {
+                document.getElementById("firstname-error").innerText = "First name is required";
+                isValid = false;
+            }
+
+            if (lastname === "") {
+                document.getElementById("lastname-error").innerText = "Last name is required";
+                isValid = false;
+            }
+
+            if (!gender) {
+                document.getElementById("gender-error").innerText = "Please select a gender";
+                isValid = false;
+            }
+
+            if (birthdate === "") {
+                document.getElementById("date-error").innerText = "Birthdate is required";
+                isValid = false;
+            }
+
+            if (!contactRegex.test(contact)) {
+                document.getElementById("contact-error").innerText = "Contact must be in the format: 63XXXXXXXXXX";
+                isValid = false;
+            }
+
+            if (!emailRegex.test(email)) {
+                document.getElementById("email-error").innerText = "Invalid email format";
+                isValid = false;
+            }
+
+            if (username === "") {
+                document.getElementById("username-error").innerText = "Username is required";
+                isValid = false;
+            }
+
+            if (password.length < 6) {
+                document.getElementById("password-error").innerText = "Password must be at least 6 characters";
+                isValid = false;
+            }
+
+            if (confirmpassword !== password) {
+                document.getElementById("confirmpassword-error").innerText = "Passwords do not match";
+                isValid = false;
+            }
+            
+            return isValid;
+        }
+    </script>
+</body>
+</html>
